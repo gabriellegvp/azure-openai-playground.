@@ -49,3 +49,31 @@ def generate_response(prompt, temperature=0.7, max_tokens=100):
 prompt = "Quais são as aplicações da inteligência artificial em negócios?"
 response = generate_response(prompt, temperature=0.9, max_tokens=150)
 print(response)
+
+### **Passo 3: Código e Scripts**
+
+Adicione os arquivos de código conforme o exemplo:
+
+1. **Crie um arquivo Python com o código**:
+
+Crie um arquivo chamado `openai_integration.py` com o seguinte código de exemplo:
+
+```python
+# Exemplo de código de geração de respostas usando OpenAI Playground
+
+import openai
+
+# Função para gerar respostas com parâmetros configuráveis
+def generate_response(prompt, temperature=0.7, max_tokens=100):
+    response = openai.Completion.create(
+        engine="text-davinci-003",  # Substitua com o modelo utilizado
+        prompt=prompt,
+        max_tokens=max_tokens,
+        temperature=temperature
+    )
+    return response.choices[0].text.strip()
+
+# Exemplo de uso da função
+prompt = "Quais são as aplicações da inteligência artificial em negócios?"
+response = generate_response(prompt, temperature=0.9, max_tokens=150)
+print(response)
